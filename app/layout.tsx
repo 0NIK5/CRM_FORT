@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, Inter_Tight } from 'next/font/google';
+import { LangProvider } from '@/lib/i18n-context';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin', 'cyrillic'], variable: '--font-inter' });
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="uk" className={`${inter.variable} ${interTight.variable}`}>
-      <body>{children}</body>
+      <body><LangProvider>{children}</LangProvider></body>
     </html>
   );
 }
