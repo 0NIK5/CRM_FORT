@@ -9,24 +9,18 @@ export function DataTable<T extends Record<string, any>>({ columns, rows, rowHre
           <tr>{columns.map((c) => <th key={c.key} className="px-4 py-3 font-medium">{c.label}</th>)}</tr>
         </thead>
         <tbody>
-          {rows.map((row, i) => {
-            const cells = columns.map((c) => (
-              <td key={c.key} className="px-4 py-3 border-t border-surface-muted">
-                {c.render ? c.render(row) : String(row[c.key])}
-              </td>
-            ));
-            return rowHref ? (
-              <tr key={i} className="hover:bg-brand-light/40 cursor-pointer">
-                {columns.map((c, j) => (
+          {rows.map((row, i) => (
+            <tr key={i} className={rowHref ? 'hover:bg-brand-light/40 cursor-pointer' : 'hover:bg-surface-soft'}>
+              {columns.map((c) => {
+                const content = c.render ? c.render(row) : String(row[c.key]);
+                return (
                   <td key={c.key} className="px-4 py-3 border-t border-surface-muted">
-                    <Link href={rowHref(row)} className="block">
-                      {c.render ? c.render(row) : String(row[c.key])}
-                    </Link>
+                    {rowHref ? <Link href={rowHref(row)} className="block">{content}</Link> : content}
                   </td>
-                ))}
-              </tr>
-            ) : <tr key={i} className="hover:bg-surface-soft">{cells}</tr>;
-          })}
+                );
+              })}
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
