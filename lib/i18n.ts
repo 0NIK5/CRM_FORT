@@ -17,7 +17,8 @@ export const dict: Record<Lang, Record<string, string>> = {
     'common.amount': 'Сума', 'common.date': 'Дата', 'common.viewAll': 'Дивитись усі',
     'dash.pipeline': 'Воронка грантів', 'dash.cashflow': 'Прогноз надходжень',
     'dash.utilization': 'Освоєння бюджету', 'dash.concentration': 'Концентрація донорів',
-    'dash.calendar': 'Календар звітності', 'dash.alerts': 'Комплаєнс-алерти'
+    'dash.calendar': 'Календар звітності', 'dash.alerts': 'Комплаєнс-алерти',
+    'dash.portfolio': 'Портфель', 'dash.active': 'активних'
   },
   en: {
     'app.title': 'Fortitude CRM',
@@ -35,6 +36,7 @@ export const dict: Record<Lang, Record<string, string>> = {
     'common.amount': 'Amount', 'common.date': 'Date', 'common.viewAll': 'View all',
     'dash.pipeline': 'Grant pipeline', 'dash.cashflow': 'Cash flow forecast',
     'dash.utilization': 'Budget utilization', 'dash.concentration': 'Donor concentration',
-    'dash.calendar': 'Reporting calendar', 'dash.alerts': 'Compliance alerts'
+    'dash.calendar': 'Reporting calendar', 'dash.alerts': 'Compliance alerts',
+    'dash.portfolio': 'Portfolio', 'dash.active': 'active'
   },
 };

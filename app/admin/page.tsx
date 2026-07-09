@@ -18,9 +18,9 @@ export default function AdminDashboard() {
     <div>
       <PageHeader title={t('nav.dashboard')} />
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <StatCard label={t('nav.grants')} value={String(mock.grants.length)} hint={`${active} active`} />
+        <StatCard label={t('nav.grants')} value={String(mock.grants.length)} hint={`${active} ${t('dash.active')}`} />
         <StatCard label={t('nav.donors')} value={String(mock.donors.length)} />
-        <StatCard label="Portfolio" value={formatMoney(totalGrants, 'UAH')} />
+        <StatCard label={t('dash.portfolio')} value={formatMoney(totalGrants, 'UAH')} />
         <StatCard label={t('dash.alerts')} value={String(D.complianceAlerts().length)} />
       </div>
       <div className="mt-6 grid gap-6 lg:grid-cols-2">
