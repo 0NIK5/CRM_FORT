@@ -1,6 +1,7 @@
 'use client';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Card } from '@/components/ui/Card';
+import { DataTable } from '@/components/ui/DataTable';
 import { BarChartCard } from '@/components/charts/BarChart';
 import { useLang } from '@/lib/i18n-context';
 import { formatMoney, formatPct } from '@/lib/format';
@@ -17,14 +18,20 @@ export default function PortalBudget() {
   const rows = Object.entries(byCat).map(([category, v]) => ({ category, ...v,
     pct: ((v.actual - v.planned) / v.planned) * 100 }));
   return (
-    <div><PageHeader title={t('nav.budget')} />
-      <Card className="mb-6"><BarChartCard data={rows.map((r) => ({ name: r.category, value: r.actual }))} /></Card>
-      <Card><ul className="space-y-1 text-sm">{rows.map((r) => (
-        <li key={r.category} className="flex justify-between border-b border-surface-muted pb-1">
-          <span>{r.category}</span>
-          <span>{formatMoney(r.actual,'UAH')} / {formatMoney(r.planned,'UAH')}
-            <span className="text-ink/50"> {formatPct(r.pct)}</span></span></li>))}
-      </ul></Card>
+    <div>
+      <PageHeader title={t('nav.budget')} subtitle={t('budget.subtitle')} />
+      <Card className="mb-6">
+        <h3 className="mb-3 font-display font-bold">{t('budget.chartTitle')}</h3>
+        <BarChartCard data={rows.map((r) => ({ name: r.category, value: r.actual }))} />
+      </Card>
+      <DataTable rows={rows} columns={[
+        { key: 'category', label: t('col.category') },
+        { key: 'actual', label: t('portal.spent'), render: (r) => formatMoney(r.actual, 'UAH') },
+        { key: 'planned', label: t('col.plan'), render: (r) => formatMoney(r.planned, 'UAH') },
+        { key: 'pct', label: t('col.variance'), render: (r) => (
+          <span className={r.pct > 0 ? 'text-red-600 font-medium' : 'text-green-600 font-medium'}>
+            {formatPct(r.pct)}</span>) },
+      ]} />
     </div>
   );
 }

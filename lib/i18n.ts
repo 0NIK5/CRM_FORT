@@ -33,7 +33,9 @@ export const dict: Record<Lang, Record<string, string>> = {
     'sect.locations': 'Локації', 'sect.dynamics': 'Динаміка',
     'impact.patients': 'Пацієнти', 'impact.consultations': 'Консультації',
     'impact.meds': 'Видано медикаментів',
-    'compliance.alertsSubtitle': 'алертів < 90 днів'
+    'compliance.alertsSubtitle': 'алертів < 90 днів',
+    'budget.subtitle': 'Освоєно проти плану за статтями бюджету',
+    'budget.chartTitle': 'Освоєно за статтями'
   },
   en: {
     'app.title': 'Fortitude CRM',
@@ -67,6 +69,8 @@ export const dict: Record<Lang, Record<string, string>> = {
     'sect.locations': 'Locations', 'sect.dynamics': 'Dynamics',
     'impact.patients': 'Patients', 'impact.consultations': 'Consultations',
     'impact.meds': 'Medications dispensed',
-    'compliance.alertsSubtitle': 'alerts < 90 days'
+    'compliance.alertsSubtitle': 'alerts < 90 days',
+    'budget.subtitle': 'Spent vs plan by budget category',
+    'budget.chartTitle': 'Spent by category'
   },
 };
