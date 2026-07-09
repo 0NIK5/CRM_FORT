@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import { useLang } from '@/lib/i18n-context';
 import { Logo } from '@/components/brand/Logo';
 
-const ITEMS = [
+export const ADMIN_ITEMS = [
   { href: '/admin', key: 'nav.dashboard' }, { href: '/admin/donors', key: 'nav.donors' },
   { href: '/admin/grants', key: 'nav.grants' }, { href: '/admin/payments', key: 'nav.payments' },
   { href: '/admin/budget', key: 'nav.budget' }, { href: '/admin/reports', key: 'nav.reports' },
@@ -17,7 +17,7 @@ export function Sidebar() {
     <aside className="hidden w-60 shrink-0 border-r border-surface-muted bg-white p-4 md:block">
       <div className="mb-6 px-2"><Logo size="sm" /></div>
       <nav className="space-y-1">
-        {ITEMS.map((it) => {
+        {ADMIN_ITEMS.map((it) => {
           const active = norm(path) === it.href;
           return (
             <Link key={it.href} href={it.href}

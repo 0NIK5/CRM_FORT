@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import { useLang } from '@/lib/i18n-context';
 import { Logo } from '@/components/brand/Logo';
 
-const ITEMS = [
+export const PORTAL_ITEMS = [
   { href: '/portal', key: 'nav.dashboard' }, { href: '/portal/budget', key: 'nav.budget' },
   { href: '/portal/impact', key: 'nav.impact' }, { href: '/portal/reports', key: 'nav.reports' },
   { href: '/portal/updates', key: 'nav.updates' },
@@ -16,7 +16,7 @@ export function PortalSidebar() {
     <aside className="hidden w-60 shrink-0 border-r border-surface-muted bg-white p-4 md:block">
       <div className="mb-6 px-2"><Logo size="sm" /></div>
       <nav className="space-y-1">
-        {ITEMS.map((it) => {
+        {PORTAL_ITEMS.map((it) => {
           const active = norm(path) === it.href;
           return (
             <Link key={it.href} href={it.href}
