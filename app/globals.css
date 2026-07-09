@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --brand: #FF6900; }
+html { scroll-behavior: smooth; }
+body { @apply bg-surface-soft text-ink font-sans antialiased; }
