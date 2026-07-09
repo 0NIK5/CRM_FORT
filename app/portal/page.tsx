@@ -19,9 +19,9 @@ export default function PortalDashboard() {
     <div>
       <PageHeader title={t('landing.donor')} subtitle="USAID Ukraine" />
       <div className="grid gap-4 sm:grid-cols-3">
-        <StatCard label={t('portal.allocated')} value={formatMoney(allocated, 'USD')} />
-        <StatCard label={t('portal.spent')} value={formatMoney(spent, 'USD')} />
-        <StatCard label={t('portal.balance')} value={formatMoney(Math.max(allocated - spent, 0), 'USD')} />
+        <StatCard label={t('portal.allocated')} value={formatMoney(allocated, 'UAH')} />
+        <StatCard label={t('portal.spent')} value={formatMoney(spent, 'UAH')} />
+        <StatCard label={t('portal.balance')} value={formatMoney(Math.max(allocated - spent, 0), 'UAH')} />
       </div>
       <Card className="mt-6"><h3 className="mb-3 font-display font-bold">{t('sect.paymentTimeline')}</h3>
         <ul className="space-y-2 text-sm">{payments.map((p) => (

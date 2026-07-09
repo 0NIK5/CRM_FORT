@@ -1,7 +1,6 @@
 'use client';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { DataTable } from '@/components/ui/DataTable';
-import { Badge } from '@/components/ui/Badge';
 import { useLang } from '@/lib/i18n-context';
 import { formatMoney, formatPct } from '@/lib/format';
 import { mock, grantName } from '@/lib/mock';

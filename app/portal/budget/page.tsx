@@ -22,7 +22,7 @@ export default function PortalBudget() {
       <Card><ul className="space-y-1 text-sm">{rows.map((r) => (
         <li key={r.category} className="flex justify-between border-b border-surface-muted pb-1">
           <span>{r.category}</span>
-          <span>{formatMoney(r.actual,'USD')} / {formatMoney(r.planned,'USD')}
+          <span>{formatMoney(r.actual,'UAH')} / {formatMoney(r.planned,'UAH')}
             <span className="text-ink/50"> {formatPct(r.pct)}</span></span></li>))}
       </ul></Card>
     </div>

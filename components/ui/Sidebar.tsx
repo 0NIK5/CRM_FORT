@@ -12,12 +12,13 @@ const ITEMS = [
 ];
 export function Sidebar() {
   const { t } = useLang(); const path = usePathname();
+  const norm = (p: string) => (p !== '/' ? p.replace(/\/$/, '') : p);
   return (
     <aside className="hidden w-60 shrink-0 border-r border-surface-muted bg-white p-4 md:block">
       <div className="mb-6 px-2"><Logo size="sm" /></div>
       <nav className="space-y-1">
         {ITEMS.map((it) => {
-          const active = path === `/CRM_FORT${it.href}` || path === it.href;
+          const active = norm(path) === it.href;
           return (
             <Link key={it.href} href={it.href}
               className={`block rounded-xl px-3 py-2 text-sm font-medium ${
