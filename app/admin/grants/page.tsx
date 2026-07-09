@@ -13,9 +13,9 @@ export default function GrantsPage() {
       <PageHeader title={t('nav.grants')} />
       <DataTable rows={mock.grants} rowHref={(g) => `/admin/grants/${g.id}`}
         columns={[
-          { key: 'projectName', label: 'Project' },
+          { key: 'projectName', label: t('col.project') },
           { key: 'donor', label: t('nav.donors'), render: (g) => donorName(g.donorId) },
-          { key: 'stage', label: 'Stage', render: (g) => <Badge tone="brand">{g.stage}</Badge> },
+          { key: 'stage', label: t('col.stage'), render: (g) => <Badge tone="brand">{g.stage}</Badge> },
           { key: 'amount', label: t('common.amount'), render: (g) => formatMoney(g.amount, g.currency) },
         ]} />
     </div>

@@ -10,7 +10,7 @@ export default function PaymentsPage() {
   return (<div><PageHeader title={t('nav.payments')} />
     <DataTable rows={mock.payments} columns={[
       { key: 'grant', label: t('nav.grants'), render: (p) => grantName(p.grantId) },
-      { key: 'trancheNumber', label: 'Tranche', render: (p) => `#${p.trancheNumber}` },
+      { key: 'trancheNumber', label: t('col.tranche'), render: (p) => `#${p.trancheNumber}` },
       { key: 'date', label: t('common.date') },
       { key: 'amount', label: t('common.amount'), render: (p) => formatMoney(p.amount, p.currency) },
       { key: 'status', label: t('common.status'), render: (p) => (

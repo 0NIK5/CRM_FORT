@@ -1,7 +1,6 @@
 'use client';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Card } from '@/components/ui/Card';
-import { Badge } from '@/components/ui/Badge';
 import { useLang } from '@/lib/i18n-context';
 import { mock, grantName } from '@/lib/mock';
 import { PORTAL_DONOR_ID } from '@/lib/portal-constants';

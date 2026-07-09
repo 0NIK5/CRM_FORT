@@ -23,7 +23,7 @@ export default function PortalDashboard() {
         <StatCard label={t('portal.spent')} value={formatMoney(spent, 'USD')} />
         <StatCard label={t('portal.balance')} value={formatMoney(Math.max(allocated - spent, 0), 'USD')} />
       </div>
-      <Card className="mt-6"><h3 className="mb-3 font-display font-bold">Часова шкала виплат</h3>
+      <Card className="mt-6"><h3 className="mb-3 font-display font-bold">{t('sect.paymentTimeline')}</h3>
         <ul className="space-y-2 text-sm">{payments.map((p) => (
           <li key={p.id} className="flex justify-between border-b border-surface-muted pb-1">
             <span>#{p.trancheNumber} · {p.date}</span>

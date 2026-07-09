@@ -10,10 +10,10 @@ export default function BudgetPage() {
   return (<div><PageHeader title={t('nav.budget')} />
     <DataTable rows={mock.budget} columns={[
       { key: 'grant', label: t('nav.grants'), render: (b) => grantName(b.grantId) },
-      { key: 'category', label: 'Category' },
-      { key: 'planned', label: 'Plan', render: (b) => formatMoney(b.planned, 'UAH') },
-      { key: 'actual', label: 'Actual', render: (b) => formatMoney(b.actual, 'UAH') },
-      { key: 'variancePct', label: 'Variance', render: (b) => (
+      { key: 'category', label: t('col.category') },
+      { key: 'planned', label: t('col.plan'), render: (b) => formatMoney(b.planned, 'UAH') },
+      { key: 'actual', label: t('col.actual'), render: (b) => formatMoney(b.actual, 'UAH') },
+      { key: 'variancePct', label: t('col.variance'), render: (b) => (
         <span className={b.flag?'text-red-600 font-medium':'text-ink/60'}>{formatPct(b.variancePct)}{b.flag?' ⚑':''}</span>) },
     ]} /></div>);
 }

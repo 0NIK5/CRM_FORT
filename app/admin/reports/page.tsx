@@ -9,14 +9,14 @@ export default function ReportsPage() {
   return (<div><PageHeader title={t('nav.reports')} />
     <DataTable rows={mock.reports} columns={[
       { key: 'grant', label: t('nav.grants'), render: (r) => grantName(r.grantId) },
-      { key: 'type', label: 'Type' },
+      { key: 'type', label: t('col.type') },
       { key: 'deadline', label: t('common.deadline') },
       { key: 'status', label: t('common.status'), render: (r) => (
         <Badge tone={r.status==='approved'?'green':r.status==='rejected'?'red':'amber'}>{r.status}</Badge>) },
     ]} />
-    <h2 className="mb-3 mt-8 font-display text-lg font-bold">Державна звітність</h2>
+    <h2 className="mb-3 mt-8 font-display text-lg font-bold">{t('sect.stateReporting')}</h2>
     <DataTable rows={mock.stateReports} columns={[
-      { key: 'formType', label: 'Form' }, { key: 'period', label: 'Period' },
+      { key: 'formType', label: t('col.form') }, { key: 'period', label: t('col.period') },
       { key: 'deadline', label: t('common.deadline') },
       { key: 'status', label: t('common.status'), render: (s) => (
         <Badge tone={s.status==='submitted'?'green':s.status==='overdue'?'red':'amber'}>{s.status}</Badge>) },

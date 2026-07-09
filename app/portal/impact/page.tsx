@@ -16,13 +16,13 @@ export default function PortalImpact() {
   return (
     <div><PageHeader title={t('nav.impact')} />
       <div className="grid gap-4 sm:grid-cols-3">
-        <StatCard label="Пацієнти" value={patients.toLocaleString('uk-UA')} />
-        <StatCard label="Консультації" value={consultations.toLocaleString('uk-UA')} />
-        <StatCard label="Видано медикаментів" value={meds.toLocaleString('uk-UA')} />
+        <StatCard label={t('impact.patients')} value={patients.toLocaleString('uk-UA')} />
+        <StatCard label={t('impact.consultations')} value={consultations.toLocaleString('uk-UA')} />
+        <StatCard label={t('impact.meds')} value={meds.toLocaleString('uk-UA')} />
       </div>
-      <Card className="mt-6"><h3 className="mb-3 font-display font-bold">Локації</h3>
+      <Card className="mt-6"><h3 className="mb-3 font-display font-bold">{t('sect.locations')}</h3>
         <UkraineImpactMap records={rec} metric="patients" /></Card>
-      <Card className="mt-6"><h3 className="mb-3 font-display font-bold">Динаміка</h3>
+      <Card className="mt-6"><h3 className="mb-3 font-display font-bold">{t('sect.dynamics')}</h3>
         <LineChartCard data={rec.map((r) => ({ name: r.location, value: r.patients }))} /></Card>
     </div>
   );

@@ -12,9 +12,9 @@ export default function DonorsPage() {
       <PageHeader title={t('nav.donors')} />
       <DataTable rows={mock.donors} rowHref={(d) => `/admin/donors/${d.id}`}
         columns={[
-          { key: 'legalName', label: 'Name' },
-          { key: 'type', label: 'Type' },
-          { key: 'country', label: 'Country' },
+          { key: 'legalName', label: t('col.name') },
+          { key: 'type', label: t('col.type') },
+          { key: 'country', label: t('col.country') },
           { key: 'status', label: t('common.status'), render: (d) => (
             <Badge tone={d.status === 'active' ? 'green' : d.status === 'declined' ? 'red' : 'gray'}>{d.status}</Badge>) },
         ]} />
