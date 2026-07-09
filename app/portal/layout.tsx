@@ -1,15 +1,13 @@
-import Link from 'next/link';
-import { Logo } from '@/components/brand/Logo';
-import { LangSwitcher } from '@/components/brand/LangSwitcher';
-import { PortalNav } from './nav';
+import { PortalSidebar } from './nav';
+import { Topbar } from '@/components/ui/Topbar';
 export default function PortalLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-surface-soft">
-      <header className="flex items-center justify-between border-b border-surface-muted bg-white px-6 py-4">
-        <Link href="/"><Logo size="sm" /></Link>
-        <div className="flex items-center gap-4"><PortalNav /><LangSwitcher /></div>
-      </header>
-      <main className="mx-auto max-w-6xl p-6">{children}</main>
+    <div className="flex min-h-screen bg-surface-soft">
+      <PortalSidebar />
+      <div className="flex min-w-0 flex-1 flex-col">
+        <Topbar />
+        <main className="flex-1 p-6">{children}</main>
+      </div>
     </div>
   );
 }
